@@ -11,7 +11,7 @@ import styles from './styles';
 
 
 
-export default function Header({ notificationIcon, leftIcon }) {
+export default function Header({ notificationIcon, leftIcon, click, late }) {
     return (
 
 
@@ -32,10 +32,10 @@ export default function Header({ notificationIcon, leftIcon }) {
 
 
 
-            {notificationIcon && <TouchableOpacity style={styles.rightIcon}>
+            {notificationIcon && <TouchableOpacity style={styles.rightIcon} onPress={click}>
                 <Image source={bell} style={styles.bell} />
                 <View style={styles.circle}>
-                    <Text style={styles.textRightIcon}>200</Text>
+                    <Text style={styles.textRightIcon}>{late}</Text>
                 </View>
             </TouchableOpacity>}
 

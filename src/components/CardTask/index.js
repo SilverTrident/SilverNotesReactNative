@@ -1,18 +1,27 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 
-import iconDefault from '../../assets/default.png'
-import styles from './styles'
-export default function CardTask({complete}) {
+//bible
+import { format } from 'date-fns';
+
+//icons
+import icons from '../../utils/typeIcons';
+
+import styles from './styles';
+
+
+export default function CardTask({ complete, title, when, type, done }) {
+    
+
     return (
-        <TouchableOpacity style={[styles.fieldTask, complete && styles.fieldTaskComplete] }>
-            <View style ={styles.leftSideCard}>
-                <Image source={iconDefault} style ={styles.imgTask}/>
-                <Text style={styles.titleTask}>Nota Generica</Text>
+        <TouchableOpacity style={[styles.fieldTask, complete && styles.fieldTaskComplete]}>
+            <View style={styles.leftSideCard}>
+                <Image source={icons[type]} style={styles.imgTask} />
+                <Text style={styles.titleTask}>{title}</Text>
             </View>
-            <View style = {styles.rightSideCard}>
-                <Text style = {styles.rightSideCardDate}>26/10/2020</Text>
-                <Text style = {styles.rightSideCardTime}>14:26</Text>
+            <View style={styles.rightSideCard}>
+                <Text style={styles.rightSideCardDate}>{format(new Date(when), 'dd/MM/yyyy')}</Text>
+                <Text style={styles.rightSideCardTime}>{format(new Date(when), 'HH:mm')}</Text>
             </View>
         </TouchableOpacity>
 

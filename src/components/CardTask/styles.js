@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     leftSideCard: {
         flexDirection: 'row',
         alignItems: "center",
-        width: '50%',
+        width: '45%',
 
     },
     imgTask: {

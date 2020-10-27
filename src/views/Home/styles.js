@@ -26,8 +26,12 @@ const styles = StyleSheet.create({
         padding:7
 
     },
+    loading:{
+        marginTop: 100
+    },
     ScrollView:{
         marginTop : 10,
+        marginBottom : 60,
         backgroundColor : '#020816'
     },
     TextFieldLabelHome:{
